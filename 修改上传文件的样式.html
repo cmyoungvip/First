@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.min.js"></script>
+		<style>
+			.box{
+				width: 100px;
+				height: 50px;
+			}
+			.file{
+				display: none;
+			}
+			.box1{
+				display: inline-block;
+				width: 100px;
+				height: 40px;
+				border-radius: 15px;
+				line-height: 40px;
+				text-align: center;
+				border: 1px solid red;
+				background: url(../商城/images/share_core_square.jpg) no-repeat;
+				background-size: cover;}
+			convas{
+				border: 1px solid red;
+			}	
+		</style>
+	</head>
+	<body>
+		<label class="box">
+			<input type="file" class="file" />
+			<span class="box1">上传文件</span>
+		</label>
+		<div><canvas width="400" height="300"></canvas></div>
+		<div>
+			<button id="tijiao">
+				提交
+			</button>
+		</div>
+	</body>
+	<script>
+		$(function(){
+			
+			$('.file').change(function(){
+				var file = new FileReader();
+				
+				file.onload = function(e){
+					var base64 = e.target.result;
+					
+					
+					if(localStorage.getItem("img1")){
+						localStorage.setItem("img2",base64);
+					}else{
+						localStorage.setItem("img1",base64);
+					};
+					console.log(base64);
+					var img = new Image();
+					img.onload = function(){
+						var canvas = $('canvas').get(0);
+						var ctx = canvas .getContext("2d");
+						/*显示图片*/
+						
+					ctx.drawImage(img,0,0,canvas.width,canvas.height)
+					}
+					img.src = base64;
+					
+				}
+				file.readAsDataURL(this.file[0]);
+				//console.log(this.files[0].size/1024)
+				
+			})
+			
+			
+		})
+		
+	</script>
+</html>

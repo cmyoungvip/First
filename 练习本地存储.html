@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>点击计数</button>
+		<hr />
+		<p id="number"></p>
+		
+		<script>
+			
+			
+			var number = localStorage.getItem('number') || 0;
+			var num = document.getElementById('number');
+			
+			var btn = document.getElementsByTagName('button')[0];
+			
+			btn.onclick=function(){
+				
+				number++;
+				localStorage.setItem("number",number)
+				
+				window.location.reload();
+			}
+			
+			//var number = localStorage.getItem('number') || 0;
+			num.innerHTML = number ;
+		</script>
+	</body>
+</html>

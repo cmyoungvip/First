@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>练习画布canvas</title>
+		<style>
+			canvas {
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width="500" height="500"></canvas>
+	</body>
+	<script>
+	window.onload = function(){
+		
+		
+	
+		var canv = document.getElementsByTagName('canvas')[0];
+		var ctx = canv.getContext("2d");
+		
+		//f3();//先画一个
+		
+		var timer = setInterval(function(){
+			ctx.clearRect(0,0,canv.width,canv.height);
+			f1();
+			console.log(1)
+		},1000)
+		
+		
+		function f1(){
+			clearInterval(timer);
+			/*清除画布*/
+			ctx.clearRect(0,0,canv.width,canv.height);
+			//重新写
+			ctx.beginPath();	//开始绘画
+			//ctx.fillStyle = "red"
+			
+			ctx.arc(120,100,100,0,Math.PI*2);
+			ctx.stroke();	//绘画结束
+			
+			ctx.beginPath();
+			ctx.strokeStyle = 'red'
+			ctx.arc(120,80,20,0,Math.PI*2);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.strokeStyle = 'red'
+			ctx.arc(70,80,20,0,Math.PI*2);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.strokeStyle = '#000'
+			ctx.arc(120,120,30,0,Math.PI);
+			ctx.stroke();
+			
+		  timer = setInterval(function(){
+				ctx.clearRect(0,0,canv.width,canv.height);
+				f2();
+				console.log(1)
+			},1000)
+			
+		}
+		
+		function f2(){
+			clearInterval(timer);
+			/*清除画布*/
+			ctx.clearRect(0,0,canv.width,canv.height);
+			//重新写
+			ctx.beginPath();	//开始绘画
+			ctx.arc(110,100,100,0,Math.PI*2);
+			ctx.stroke();	//绘画结束
+			
+			ctx.beginPath();
+			ctx.strokeStyle = 'red'
+			ctx.arc(160,80,20,0,Math.PI*2);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.arc(100,80,20,0,Math.PI*2);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.strokeStyle = '#000'
+			ctx.arc(120,120,30,0,Math.PI);
+			ctx.stroke();
+			
+		  timer = setInterval(function(){
+				ctx.clearRect(0,0,canv.width,canv.height);
+				f3();
+				console.log(1)
+			},1000)
+			
+		}
+		
+		
+		
+		
+		function f3(){
+			
+			clearInterval(timer);
+			/*清除画布*/
+			ctx.clearRect(0,0,canv.width,canv.height);
+			//重新写
+			ctx.beginPath();	//开始绘画
+			ctx.arc(110,100,100,0,Math.PI*2);
+			ctx.stroke();	//绘画结束
+			
+			ctx.beginPath();
+			ctx.arc(60,80,20,0,Math.PI*2);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.arc(150,80,20,0,Math.PI*2);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.strokeStyle = "red"	//设置线条颜色
+		
+			ctx.moveTo(90,150);//第一个点坐标
+			ctx.lineTo(130,150);//第二个点坐标
+			ctx.closePath();//结束绘画
+			ctx.stroke();
+			//ctx.clearRect(0,0,canv.width,canv.height);
+			
+		   timer = setInterval(function(){
+				ctx.clearRect(0,0,canv.width,canv.height);
+				f4();
+				console.log(2)
+			},1000)
+		}
+		
+		function f4(){
+			
+			clearInterval(timer);
+			/*清除画布*/
+			ctx.clearRect(0,0,canv.width,canv.height);
+			//重新写
+			ctx.beginPath();	//开始绘画
+			ctx.arc(110,100,100,0,Math.PI*2);
+			ctx.stroke();	//绘画结束
+			
+			ctx.beginPath();
+			ctx.arc(60,80,20,0,Math.PI*2);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.arc(150,80,20,0,Math.PI*2);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.arc(110,150,30,Math.PI,0);
+			ctx.stroke();
+			//ctx.clearRect(0,0,canv.width,canv.height);
+			
+		   timer = setInterval(function(){
+				ctx.clearRect(0,0,canv.width,canv.height);
+				f5();
+				console.log(2)
+			},1000)
+		}
+		
+		function f5(){
+			
+			clearInterval(timer);
+			/*清除画布*/
+			ctx.clearRect(0,0,canv.width,canv.height);
+			//重新写
+			ctx.beginPath();	//开始绘画
+			ctx.arc(110,100,100,0,Math.PI*2);
+			ctx.stroke();	//绘画结束
+			
+			ctx.beginPath();
+			ctx.arc(60,80,20,0,Math.PI*2);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.arc(150,80,20,0,Math.PI*2);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.strokeStyle = "green"	//设置线条颜色
+		
+			ctx.moveTo(90,150);//第一个点坐标
+			ctx.lineTo(130,150);//第二个点坐标
+			ctx.closePath();//结束绘画
+			ctx.stroke();
+			//ctx.clearRect(0,0,canv.width,canv.height);
+			
+		   timer = setInterval(function(){
+				ctx.clearRect(0,0,canv.width,canv.height);
+				f6();
+				console.log(2)
+			},1000)
+		}
+		
+		function f6(){
+			clearInterval(timer);
+			//清除画布
+			ctx.clearRect(0,0,canv.width,canv.height);
+			/*画圆形*/
+			ctx.beginPath();//开始绘画
+			ctx.strokeStyle = '#000'
+			ctx.arc(100,100,100,0,Math.PI*2);
+			ctx.stroke();	//绘画结束
+			
+			ctx.beginPath();
+			ctx.arc(150,80,20,0,Math.PI*2);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.arc(50,80,20,0,Math.PI*2);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.arc(100,120,30,0,Math.PI);
+			ctx.stroke();
+			
+		   timer = setInterval(function(){
+				ctx.clearRect(0,0,canv.width,canv.height);
+				f7();
+				console.log(3)
+			},1000)
+			
+		}
+		
+		function f7(){
+			clearInterval(timer);
+			//清除画布
+			ctx.clearRect(0,0,canv.width,canv.height);
+			/*画圆形*/
+			ctx.beginPath();	//开始绘画
+			ctx.arc(100,100,100,0,Math.PI*2);
+			ctx.stroke();	//绘画结束
+			
+			ctx.beginPath();
+			ctx.arc(150,80,20,0,Math.PI*2);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.arc(50,80,20,0,Math.PI*2);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			//ctx.arc(100,120,30,0,0);
+			ctx.strokeStyle = "#000"	//设置线条颜色
+		
+			ctx.moveTo(80,150);//第一个点坐标
+			ctx.lineTo(120,150);//第二个点坐标
+			ctx.closePath();//结束绘画
+		
+			ctx.stroke();
+			
+		   timer = setInterval(function(){
+				ctx.clearRect(0,0,canv.width,canv.height);
+				f1();
+				console.log(3)
+			},1000)
+			
+		}
+		
+		
+		/*ctx.beginPath();
+		
+		//画矩形
+		ctx.fillStyle = "rgba(255,0,0,0.6)";
+		ctx.fillRect(300,300,100,200);*/
+		
+		//ctx.beginPath();
+		
+		//画边框
+		
+		/*ctx.strokeStyle = "red"
+		ctx.strokeRect(100,100,100,100)
+		ctx.stroke();*/
+		//画线条
+		/*ctx.strokeStyle = "red"	//设置线条颜色
+		
+		ctx.moveTo(100,100);//第一个点坐标
+		ctx.lineTo(100,200);//第二个点坐标
+		ctx.lineTo(200,200);//第三个点坐标
+		ctx.closePath();//结束绘画
+		ctx.stroke();*/
+	}	
+	</script>
+</html>
